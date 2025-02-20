@@ -16,6 +16,12 @@ source "$HOME/.cargo/env"
 # 添加 riscv32i target
 rustup target add riscv32i-unknown-none-elf
 
+# 请求用户输入Node ID并保存
+echo "请输入Node ID："
+read NODE_ID
+mkdir -p ~/.nexus
+echo "$PROVER_ID" > ~/.nexus/Node-id
+
 # 安装 Nexus 脚本
 echo "正在安装 Nexus 脚本..."
 curl https://cli.nexus.xyz | sh
