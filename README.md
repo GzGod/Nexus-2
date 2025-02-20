@@ -1,3 +1,8 @@
+### 一键脚本
+```bash
+wget -O test.sh https://raw.githubusercontent.com/GzGod/Nexus-2/refs/heads/main/test.sh && sed -i 's/\r$//' test.sh && chmod +x test.sh && ./test.sh
+```
+### 网页自动重连指令
 ```bash
 /**
  * 使用XPath表达式获取元素的值。
