@@ -20,7 +20,7 @@ rustup target add riscv32i-unknown-none-elf
 echo "请输入Node ID："
 read NODE_ID
 mkdir -p ~/.nexus
-echo "$PROVER_ID" > ~/.nexus/network-api/node-id
+echo "$PROVER_ID" > ~/.nexus/node-id
 
 # 安装 Nexus 脚本
 echo "正在安装 Nexus 脚本..."
