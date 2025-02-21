@@ -12,6 +12,14 @@ sudo apt install -y libssl-dev pkg-config
 echo "正在安装 protobuf..."
 sudo apt install -y protobuf-compiler
 
+# 重启受影响的关键服务
+echo "正在重启受影响的服务..."
+sudo systemctl restart ssh.service
+sudo systemctl restart systemd-journald.service
+sudo systemctl restart systemd-logind.service
+sudo systemctl restart systemd-resolved.service
+sudo systemctl restart systemd-timesyncd.service
+
 # 安装 Rust
 echo "正在安装 Rust..."
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
