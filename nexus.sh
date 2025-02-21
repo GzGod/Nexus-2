@@ -8,9 +8,13 @@ echo "正在安装必要的系统依赖..."
 sudo apt update
 sudo apt install -y libssl-dev pkg-config
 
-# 安装 protobuf
-echo "正在安装 protobuf..."
-sudo apt install -y protobuf-compiler
+# 安装最新版 Protocol Buffers
+echo "正在安装最新版 protobuf..."
+sudo apt remove -y protobuf-compiler  # 移除可能的旧版本
+wget https://github.com/protocolbuffers/protobuf/releases/download/v25.3/protoc-25.3-linux-x86_64.zip
+unzip protoc-25.3-linux-x86_64.zip -d /usr/local
+sudo ln -sf /usr/local/bin/protoc /usr/bin/protoc
+protoc --version  # 验证安装
 
 # 重启受影响的关键服务
 echo "正在重启受影响的服务..."
