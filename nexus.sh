@@ -3,10 +3,10 @@
 # 打印开始信息
 echo "开始安装依赖和 Nexus 脚本..."
 
-# 安装必要的系统依赖（包括 OpenSSL 和 pkg-config）
+# 安装必要的系统依赖（包括 OpenSSL、pkg-config 和 gcc）
 echo "正在安装必要的系统依赖..."
 sudo apt update
-sudo apt install -y libssl-dev pkg-config
+sudo apt install -y libssl-dev pkg-config gcc
 
 # 安装最新版 Protocol Buffers
 echo "正在安装最新版 protobuf..."
